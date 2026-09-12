@@ -37,21 +37,21 @@ const renderAllNFTs = function (nfts, creators) {
 
 const fetchData = async function () {
   try {
-    const res = await axios.get(
+    const response = await axios.get(
       "https://raw.githubusercontent.com/mmhosseinzadeh9190/mft-final/refs/heads/main/assets/data/data.json",
     );
 
-    const collections = res.data.collections;
-    const creators = res.data.creators;
-    const categories = res.data.categories;
-    const nfts = res.data.nfts;
+    const collections = response.data.collections;
+    const creators = response.data.creators;
+    const categories = response.data.categories;
+    const nfts = response.data.nfts;
 
     renderAllCollections(collections, creators);
     renderAllCreators(creators);
     renderAllCategories(categories);
     renderAllNFTs(nfts, creators);
-  } catch (err) {
-    console.error("Error fetching data:", err.message);
+  } catch (error) {
+    console.error("Failed to fetch data:", error.message);
   }
 };
 fetchData();

@@ -38,7 +38,7 @@ const renderAllNFTs = function (nfts, creators) {
 const fetchData = async function () {
   try {
     const response = await axios.get(
-      "https://raw.githubusercontent.com/mmhosseinzadeh9190/mft-final/refs/heads/main/assets/data/data.json",
+      "https://raw.githubusercontent.com/mmhz23/mft-final/refs/heads/main/public/assets/data/data.json",
     );
 
     const collections = response.data.collections;
